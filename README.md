@@ -1,4 +1,4 @@
-# Dog-Breed-List
+# 🐶 Dog-Breed-List 
 ![Screenshot 2020-07-15 at 15 34 52](https://user-images.githubusercontent.com/38043915/87559265-fa5aff00-c6b1-11ea-83dd-f8ede5d11057.png)
 
 ## Look at all of your favourite dog breeds. Made with https://dog.ceo/dog-api/

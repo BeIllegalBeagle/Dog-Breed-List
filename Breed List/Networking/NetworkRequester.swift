@@ -44,7 +44,7 @@ class NetworkRequester: NetworkManagerProtocol {
         
         URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             if error != nil {
-                print(error?.localizedDescription)
+                print(error!.localizedDescription)
                 completion(nil, .noInternet)
             }
             guard let data = data else { return }

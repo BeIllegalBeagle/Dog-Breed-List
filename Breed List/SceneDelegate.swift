@@ -17,7 +17,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let winScene = (scene as? UIWindowScene) else { return }
+        
+        let collectionViewFlowLayout = UICollectionViewFlowLayout()
+        collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
+        collectionViewFlowLayout.scrollDirection = .vertical
+        collectionViewFlowLayout.itemSize = CGSize(width: 170, height: 190)
+        
+        let collectionView = ListViewController(collectionViewLayout: collectionViewFlowLayout)
+        let vc = UINavigationController(rootViewController: collectionView)
+        vc.navigationBar.prefersLargeTitles = true
+
+        collectionView.title = "Doggies 🐶"
+        vc.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.black, NSAttributedString.Key.font : UIFont.systemFont(ofSize: 36, weight: .semibold)]
+        vc.navigationController?.hidesBarsOnSwipe = true
+        vc.navigationBar.backgroundColor = .white
+        
+        window = UIWindow(windowScene: winScene)
+        window?.rootViewController = vc
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+protocol NetworkManagerProtocol {
+    func fetchAllBreedsList(completion: @escaping (Dogrequest?, states?) -> ())
+    func getImageURLs(_ breedList: [DogList], completion: @escaping ([DogBreed]) -> ())
+    func getRandomDogs(_ dogBreed: String, completion: @escaping ([String]) -> ())
+}
